@@ -1,0 +1,555 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.navbar{
+    background: #007cbd;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar_container{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+#navbar_logo{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.navbar_menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.navbar_item{
+    height: 80px;
+}
+
+.navbar_links{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    text-decoration: none;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.navbar_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    background: white;
+    color: #007cbd;
+    transition: all 0.3s case;
+}
+
+.navbar_links:hover{
+    color: #95daff;
+    transition: all 0.3s ease;
+}
+
+.button:hover{
+    color: #ffffff;
+    background-color: #3EB7DD;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px #95daff;
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 600px){
+    .navbar_container{
+        display: flex;
+        justify-content: space-between;
+        height:60px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    .navbar_menu{
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 1;
+        transition: all 0.8s ease;
+        z-index: -1;
+    }
+
+    .navbar_menu.active{
+        background: #007cbd;
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 50vh;
+        font-size: 18px;
+    }
+
+    #navbar_logo{
+        padding-left: 25px;
+    }
+
+    .navbar_toggle .bar{
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.5s ease-in-out;
+        background-color: #95daff;
+    }
+
+    .navbar_item{
+        width: 100%;
+    }
+
+    .navbar_links{
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    .navbar_btn{
+        padding-bottom: 2rem;
+    }
+
+    .button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 60px;
+        margin: 0;
+    }
+
+    #mobile-menu{
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+
+    .navbar_toggle .bar{
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2){
+        opacity: 0;
+    }
+    
+    #mobile-menu.is-active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* header section */
+.header{
+    width: 100%;
+    background: url(img/Background\ Header\ Title.png);
+    background-color: #F4FBFF;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: auto;
+}
+
+.header_title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 100%;
+    /* text-align: center; */
+    padding-top: 127px;
+    padding-bottom: 60px;
+}
+
+.header h1{
+    color: #ffffff;
+    font-size: 48px;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    font-weight: bold;
+}
+
+/* form section */
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 640px;
+    height: auto;
+    margin: 25px auto;
+    background-color: #fff;
+    padding: 5px 20px 30px 20px;
+    border-radius: 16px;
+}
+
+input[name="nama_perusahaan"],
+input[name="email"],
+input[name="nomor_telepon"],
+input[name="link_web"] {
+    /* margin-left: 70px; */
+    width: 600px;
+    font-size: 12px;
+    height: 44px;
+    padding: 8px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #f8f8f8;
+}
+
+.form input[required]::placeholder,
+.form textarea[required]::placeholder {
+    width: fit-content;
+    background: #000000;
+    background: -webkit-linear-gradient(to right, #000000, #000000, #000000, #000000, #000000, #000000, #ff1919);
+    background: linear-gradient(to right, #000000, #000000, #000000, #000000, #000000, #000000, #ff1919);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.required {
+    color: red;
+}
+
+.form p{
+    margin-top: 8px;
+    color: #828282;
+    font-size: 12px;
+}
+
+textarea{
+    width: 600px;
+    font-size: 12px;
+    height: 120px;
+    padding: 8px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #f8f8f8;
+    overflow: hidden;
+    resize: none;
+}
+
+.upload_image{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    margin-top: 25px;
+}
+
+#drop-area{
+    width: 200px;
+    height: 200px;
+    padding: 15px;
+    background: #f8f8f8;
+    text-align: center;
+    border-radius: 8px;
+}
+
+#img-view{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-position: center;
+    background-size: cover;
+}
+
+#img-view img{
+    width: 38px;
+    margin-top: 65px;
+}
+
+#img-view p{
+    font-size: 10px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.requirement li{
+    font-size: 12px;
+}
+
+.profil{
+    height: 44px;
+    margin-top: 25px;
+    width: 600px;
+}
+
+.profil label{
+    background: #f8f8f8;
+    font-size: 12px;
+    color: #000000;
+    display: block;
+    padding: 8px;
+    border-radius: 8px;
+    width: 100%;
+    border: none;
+    line-height: 29px;
+    position: relative;
+}
+
+.profil label:before{
+    position: absolute;
+    content: "Upload file";
+    right: 0;
+    top: 0;
+    width: 160px;
+    height: 44px;
+    line-height: 44px;
+    color: #ffffff;
+    background: #007CBD;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.checkbox_content{
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.checkbox_content label{
+    font-size: 12px;
+}
+
+.checkbox_content input{
+    accent-color: #007CBD;
+}
+
+
+input[type="submit"] {
+    margin: 0 auto;
+    width: 250px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #007CBD;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    margin-top: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+}
+
+@media screen and (max-width: 600px) {
+    .header_title{
+        padding-top: 30px;
+        padding-bottom: 0px;
+    }
+    
+    .header h1{
+        font-size: 40px;
+    }
+
+    .form {
+        width: 350px;
+        margin: 40px auto;
+    }
+
+    input[name="nama_perusahaan"],
+    input[name="email"],
+    input[name="nomor_telepon"],
+    input[name="link_web"] {
+        /* margin-left: 70px; */
+        width: 100%;
+    }
+
+    .form input[required]::placeholder,
+    .form textarea[required]::placeholder {
+        color: #000000;
+    }
+
+    .required {
+        color: red;
+    }
+
+    .form p{
+        margin-top: 8px;
+        color: #828282;
+        font-size: 10px;
+    }
+
+    textarea{
+        width: 100%;
+    }
+
+    .upload_image{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+
+    #drop-area{
+        width: 150px;
+        height: 150px;
+        padding: 10px;
+    }
+
+    #img-view img{
+        width: 30px;
+        margin-top: 50px;
+    }
+
+    #img-view p{
+        font-size: 8px;
+        margin-top: 20px;
+    }
+
+    .profil{
+        width: 100%;
+    }
+
+    .profil label:before{
+        content: "Upload";
+        width: auto;
+        padding: 0 8px;
+        font-size: 10px;
+    }
+
+    .checkbox_content{
+        gap: 5px;
+    }
+
+    .checkbox_content label{
+        font-size: 10px;
+    }
+
+
+    input[type="submit"] {
+        margin: 0 auto;
+        width: 250px;
+        font-size: 14px;
+        font-weight: bold;
+        background-color: #007CBD;
+        padding: 16px 20px;
+        border: none;
+        border-radius: 5px;
+        color: #ffffff;
+        margin-top: 10px;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.35s;
+        outline: none;
+    }
+}
+
+/* footer Section */
+.footer{
+    background: #007CBD;
+    padding: 30px 50px;
+}
+
+footer_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_desc{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 421px;
+}
+
+.footer_desc h6{
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.social_media{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 167px;
+}
+
+.icon{
+    color: #ffffff;
+    font-size: 21px;
+}
+
+.footer_container hr{
+    margin: 15px 0;
+}
+
+.footer_container p{
+    color: #ffffff;
+    font-size: 10px;
+}
+
+@media screen and (max-width: 600px){
+    .footer_desc{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .social_media{
+        width: 100px;
+    }
+}
+
